@@ -6,6 +6,7 @@ var mongoose = require("mongoose");
 var cheerio = require("cheerio");
 var request = require("request");
 var axios = require("axios");
+var mongodb = require ("mongodb");
 
 // Require all models
 var db = require("./models");
@@ -33,7 +34,7 @@ app.use(express.static("public"));
 
 // Connect to the Mongo DB
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/scrapedNews";
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
